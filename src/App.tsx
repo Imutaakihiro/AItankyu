@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Users, Trophy, Heart, MapPin, Clock, Wallet, Camera, Music, Gamepad2, Bot, Sparkles, Code } from 'lucide-react';
+import { Calendar, Users, Trophy, Heart, MapPin, Clock, Wallet, Bot } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface ActivityCardProps {
@@ -25,118 +25,175 @@ interface SeasonCardProps {
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white p-8">
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-7xl mx-auto"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="max-w-7xl mx-auto px-4 py-24"
       >
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600"
-        >
-          サークル活動プラットフォーム
-        </motion.h1>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
-        >
-          <ActivityCard
-            icon={<Calendar className="w-8 h-8 text-purple-400" />}
-            title="イベント管理"
-            description="サークル活動のスケジュールを簡単に管理"
-            delay={0.6}
-          />
-          <ActivityCard
-            icon={<Users className="w-8 h-8 text-blue-400" />}
-            title="メンバー管理"
-            description="メンバー情報を効率的に管理"
-            delay={0.8}
-          />
-          <ActivityCard
-            icon={<Trophy className="w-8 h-8 text-yellow-400" />}
-            title="実績管理"
-            description="サークルの活動実績を記録"
-            delay={1.0}
-          />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
-        >
-          <InfoCard
-            icon={<MapPin className="w-6 h-6 text-green-400" />}
-            title="活動場所"
-            text="キャンパス内の専用スペース"
-            delay={1.4}
-          />
-          <InfoCard
-            icon={<Clock className="w-6 h-6 text-red-400" />}
-            title="活動時間"
-            text="平日 15:00-20:00"
-            delay={1.6}
-          />
-          <InfoCard
-            icon={<Wallet className="w-6 h-6 text-blue-400" />}
-            title="会費"
-            text="月額 1,000円"
-            delay={1.8}
-          />
-          <InfoCard
-            icon={<Heart className="w-6 h-6 text-pink-400" />}
-            title="メンバー数"
-            text="現在 50名"
-            delay={2.0}
-          />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 2.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          <SeasonCard
-            title="春学期"
-            months="4月-7月"
-            events={[
-              "新歓イベント",
-              "定期ミーティング",
-              "成果発表会"
-            ]}
-            delay={2.4}
-          />
-          <SeasonCard
-            title="夏休み"
-            months="8月-9月"
-            events={[
-              "サマーキャンプ",
-              "外部イベント参加",
-              "プロジェクト開発"
-            ]}
-            delay={2.6}
-          />
-          <SeasonCard
-            title="秋学期"
-            months="10月-1月"
-            events={[
-              "文化祭出展",
-              "技術勉強会",
-              "成果発表会"
-            ]}
-            delay={2.8}
-          />
-        </motion.div>
+        <div className="text-center max-w-3xl mx-auto">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl font-bold mb-6 text-gray-900"
+          >
+            Leave it to Circle
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xl text-gray-600 mb-12"
+          >
+            サークル活動の管理と運営をシンプルに。思考と行動を繋ぐプラットフォームです。
+          </motion.p>
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            whileHover={{ scale: 1.05 }}
+            className="bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-900 transition-colors"
+          >
+            始める
+          </motion.button>
+        </div>
       </motion.div>
+
+      {/* Features Section */}
+      <div className="bg-gray-50 py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-7xl mx-auto px-4"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <ActivityCard
+              icon={<Calendar className="w-8 h-8" />}
+              title="イベント管理"
+              description="サークル活動のスケジュールを簡単に管理できます。"
+              delay={0.2}
+            />
+            <ActivityCard
+              icon={<Users className="w-8 h-8" />}
+              title="メンバー管理"
+              description="メンバー情報を効率的に管理できます。"
+              delay={0.4}
+            />
+            <ActivityCard
+              icon={<Trophy className="w-8 h-8" />}
+              title="実績管理"
+              description="サークルの活動実績を記録できます。"
+              delay={0.6}
+            />
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Info Section */}
+      <div className="py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-7xl mx-auto px-4"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <InfoCard
+              icon={<MapPin className="w-6 h-6" />}
+              title="活動場所"
+              text="キャンパス内の専用スペース"
+              delay={0.2}
+            />
+            <InfoCard
+              icon={<Clock className="w-6 h-6" />}
+              title="活動時間"
+              text="平日 15:00-20:00"
+              delay={0.4}
+            />
+            <InfoCard
+              icon={<Wallet className="w-6 h-6" />}
+              title="会費"
+              text="月額 1,000円"
+              delay={0.6}
+            />
+            <InfoCard
+              icon={<Heart className="w-6 h-6" />}
+              title="メンバー数"
+              text="現在 50名"
+              delay={0.8}
+            />
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Schedule Section */}
+      <div className="bg-gray-50 py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-7xl mx-auto px-4"
+        >
+          <h2 className="text-3xl font-bold text-center mb-16 text-gray-900">年間スケジュール</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <SeasonCard
+              title="春学期"
+              months="4月-7月"
+              events={[
+                "新歓イベント",
+                "定期ミーティング",
+                "成果発表会"
+              ]}
+              delay={0.2}
+            />
+            <SeasonCard
+              title="夏休み"
+              months="8月-9月"
+              events={[
+                "サマーキャンプ",
+                "外部イベント参加",
+                "プロジェクト開発"
+              ]}
+              delay={0.4}
+            />
+            <SeasonCard
+              title="秋学期"
+              months="10月-1月"
+              events={[
+                "文化祭出展",
+                "技術勉強会",
+                "成果発表会"
+              ]}
+              delay={0.6}
+            />
+          </div>
+        </motion.div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-3xl mx-auto px-4 text-center"
+        >
+          <h2 className="text-3xl font-bold mb-6 text-gray-900">サークル活動をもっと楽しく</h2>
+          <p className="text-xl text-gray-600 mb-12">
+            新しい形のサークル活動管理を始めましょう
+          </p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            className="bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-900 transition-colors"
+          >
+            無料で始める
+          </motion.button>
+        </motion.div>
+      </div>
     </div>
   );
 }
@@ -147,14 +204,11 @@ function ActivityCard({ icon, title, description, delay }: ActivityCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
-      whileHover={{ scale: 1.05 }}
-      className="bg-black/60 p-8 rounded-xl border border-gray-800 backdrop-blur-sm hover:bg-black/80 transition duration-300 text-white"
+      className="bg-white p-8 rounded-2xl"
     >
-      <div className="flex items-center mb-4">
-        {icon}
-        <h2 className="text-xl font-semibold ml-3">{title}</h2>
-      </div>
-      <p className="text-gray-300">{description}</p>
+      <div className="mb-6">{icon}</div>
+      <h3 className="text-xl font-semibold mb-4 text-gray-900">{title}</h3>
+      <p className="text-gray-600">{description}</p>
     </motion.div>
   );
 }
@@ -165,14 +219,11 @@ function InfoCard({ icon, title, text, delay }: InfoCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
-      whileHover={{ scale: 1.05 }}
-      className="bg-black/60 p-6 rounded-xl border border-gray-800 backdrop-blur-sm text-center text-white"
+      className="bg-white p-6 rounded-2xl text-center"
     >
-      <div className="flex justify-center mb-3">
-        {icon}
-      </div>
-      <h3 className="text-lg font-semibold mb-2">{title}</h3>
-      <p className="text-gray-300">{text}</p>
+      <div className="flex justify-center mb-4">{icon}</div>
+      <h3 className="text-lg font-semibold mb-2 text-gray-900">{title}</h3>
+      <p className="text-gray-600">{text}</p>
     </motion.div>
   );
 }
@@ -183,21 +234,20 @@ function SeasonCard({ title, months, events, delay }: SeasonCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
-      whileHover={{ scale: 1.05 }}
-      className="bg-black/60 p-6 rounded-xl border border-gray-800 backdrop-blur-sm text-white"
+      className="bg-white p-6 rounded-2xl"
     >
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-gray-400 mb-4">{months}</p>
-      <ul className="space-y-2">
+      <h3 className="text-xl font-semibold mb-2 text-gray-900">{title}</h3>
+      <p className="text-gray-500 mb-6">{months}</p>
+      <ul className="space-y-4">
         {events.map((event, index) => (
           <motion.li
             key={index}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3, delay: delay + index * 0.1 }}
-            className="flex items-center text-gray-300"
+            className="flex items-center text-gray-600"
           >
-            <span className="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
+            <span className="w-2 h-2 bg-black rounded-full mr-3"></span>
             {event}
           </motion.li>
         ))}
