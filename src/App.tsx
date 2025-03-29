@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, Users, Trophy, Heart, MapPin, Clock, Wallet, Bot, Instagram, Twitter, MessageCircle, ChevronRight, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logoAI from './assets/logoAI.jpg';
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -46,7 +47,7 @@ function App() {
             className="flex items-center space-x-2"
           >
             <img 
-              src="/images/logoAI.jpg"
+              src={logoAI}
               alt="AI探究会ロゴ" 
               className="w-8 h-8 object-contain"
             />
@@ -135,7 +136,7 @@ function App() {
           <div className="absolute inset-0 flex items-center justify-center -translate-y-20">
             <div className="relative w-[800px] h-[800px]">
               <img 
-                src="/images/logoAI.jpg"
+                src={logoAI}
                 alt="AI探究会ロゴ" 
                 className="w-full h-full object-contain opacity-15"
               />
@@ -740,7 +741,7 @@ function App() {
             <div className="mb-8 md:mb-0">
               <div className="flex items-center space-x-2 mb-4">
                 <img 
-                  src="/images/logoAI.jpg"
+                  src={logoAI}
                   alt="AI探究会ロゴ" 
                   className="w-8 h-8 object-contain"
                 />
