@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Users, Trophy, Heart, MapPin, Clock, Wallet, Bot, Instagram, Twitter, MessageCircle, ChevronRight, Menu, X } from 'lucide-react';
+import { Calendar, Users, Trophy, Heart, Wallet,  Instagram, Menu, X } from 'lucide-react'; 
 import { motion, AnimatePresence } from 'framer-motion';
 import logoAI from './assets/logoAI.jpg';
 
@@ -64,7 +64,9 @@ function App() {
               whileHover={{ scale: 1.02 }}
               className="bg-black text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-900 transition-colors"
             >
-              入会はこちら！
+              <a href="https://docs.google.com/forms/d/1cFeIUMvCSwXw9udi6DFEXim409TwzSn4Xoh9KkowJRs/edit" target="_blank" rel="noopener noreferrer">
+                入会はこちら！
+              </a>
             </motion.button>
           </div>
 
@@ -120,7 +122,9 @@ function App() {
                   className="w-full bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-900 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  入会はこちら！
+                  <a href="https://docs.google.com/forms/d/1cFeIUMvCSwXw9udi6DFEXim409TwzSn4Xoh9KkowJRs/edit" target="_blank" rel="noopener noreferrer">
+                    入会はこちら！
+                  </a>
                 </motion.button>
               </div>
             </motion.div>
@@ -224,8 +228,10 @@ function App() {
                 whileHover={{ scale: 1.05 }}
                 className="bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-900 transition-colors relative group"
               >
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-20 group-hover:opacity-50 transition duration-200"></div>
-                <span className="relative">入会フォーム</span>
+                <a href="https://docs.google.com/forms/d/1cFeIUMvCSwXw9udi6DFEXim409TwzSn4Xoh9KkowJRs/edit" target="_blank" rel="noopener noreferrer">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-20 group-hover:opacity-50 transition duration-200"></div>
+                  <span className="relative">入会フォーム</span>
+                </a>
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -428,238 +434,437 @@ function App() {
 
       {/* Schedule Section */}
       <section id="schedule" className="py-24 bg-white relative overflow-hidden">
-        {/* 春と同じフォーマットで夏秋冬を実装 */}
-        <div className="space-y-16 md:space-y-32">
-          {/* 春（既存） */}
-          <motion.div 
-            className="relative flex flex-col md:flex-row items-start md:items-center pl-8 md:pl-0"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="w-full md:w-1/2 md:pr-16 mb-6 md:mb-0">
-              <h3 className="text-3xl md:text-4xl font-bold text-pink-500 mb-4 md:text-right">Spring</h3>
-              <div className="bg-white shadow-lg rounded-lg p-6">
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.3 }}
-                  className="space-y-4"
-                >
-                  <div>
-                    <h4 className="text-xl md:text-2xl font-bold text-gray-900">4月 新歓イベント</h4>
-                    <p className="text-base md:text-lg text-gray-700 mt-2">桜の下で新しい出会いと思い出を</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xl md:text-2xl font-bold text-gray-900">5月 BBQ・アウトドア</h4>
-                    <p className="text-base md:text-lg text-gray-700 mt-2">自然の中で楽しむ青春時間</p>
-                  </div>
-                </motion.div>
+        {/* 選択セクション */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-7xl mx-auto px-4 mb-16"
+        >
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12 text-gray-900">
+            あなたはどっちを満喫する？
+          </h2>
+          <div className="grid grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="relative h-[300px] rounded-2xl overflow-hidden cursor-pointer group"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1522383225653-ed111181a951"
+                alt="イベント"
+                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h3 className="text-4xl font-bold text-white">イベント</h3>
               </div>
-            </div>
-            <div className="absolute left-3 md:left-1/2 top-0 md:top-1/2 w-6 h-6 bg-pink-500 rounded-full transform md:-translate-x-1/2 md:-translate-y-1/2 shadow-lg z-10" />
-            <div className="w-full md:w-1/2 md:pl-16">
-              <motion.div
-                className="relative overflow-hidden rounded-xl shadow-xl"
-                initial={{ scale: 0.8 }}
-                whileInView={{ scale: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1522383225653-ed111181a951"
-                  alt="春のイベント"
-                  className="w-full h-48 md:h-64 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-              </motion.div>
-            </div>
-          </motion.div>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="relative h-[300px] rounded-2xl overflow-hidden cursor-pointer group"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1677442136019-21780ecad995"
+                alt="AI"
+                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h3 className="text-4xl font-bold text-white">AI</h3>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
 
-          {/* 夏 */}
-          <motion.div 
-            className="relative flex flex-col md:flex-row items-start md:items-center pl-8 md:pl-0"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="w-full md:w-1/2 md:pr-16 mb-6 md:mb-0">
-              <h3 className="text-3xl md:text-4xl font-bold text-blue-500 mb-4 md:text-right">Summer</h3>
-              <div className="bg-white shadow-lg rounded-lg p-6">
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.3 }}
-                  className="space-y-4"
-                >
-                  <div>
-                    <h4 className="text-xl md:text-2xl font-bold text-gray-900">6月 交流会</h4>
-                    <p className="text-base md:text-lg text-gray-700 mt-2">歌って踊って仲間作り</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xl md:text-2xl font-bold text-gray-900">7-8月 夏合宿</h4>
-                    <p className="text-base md:text-lg text-gray-700 mt-2">ビーチ・花火・最高の思い出作り</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xl md:text-2xl font-bold text-gray-900">8月 サマーフェスティバル</h4>
-                    <p className="text-base md:text-lg text-gray-700 mt-2">音楽と光の饗宴</p>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-            <div className="absolute left-3 md:left-1/2 top-0 md:top-1/2 w-6 h-6 bg-blue-500 rounded-full transform md:-translate-x-1/2 md:-translate-y-1/2 shadow-lg z-10" />
-            <div className="w-full md:w-1/2 md:pl-16">
-              <motion.div
-                className="relative overflow-hidden rounded-xl shadow-xl"
-                initial={{ scale: 0.8 }}
-                whileInView={{ scale: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
-                  alt="夏のイベント"
-                  className="w-full h-48 md:h-64 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-              </motion.div>
-            </div>
-          </motion.div>
+        {/* 既存のイベントセクション */}
 
-          {/* 秋 */}
-          <motion.div 
-            className="relative flex flex-col md:flex-row items-start md:items-center pl-8 md:pl-0"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="w-full md:w-1/2 md:pr-16 mb-6 md:mb-0">
-              <h3 className="text-3xl md:text-4xl font-bold text-orange-500 mb-4 md:text-right">Autumn</h3>
-              <div className="bg-white shadow-lg rounded-lg p-6">
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.3 }}
-                  className="space-y-4"
-                >
-                  <div>
-                    <h4 className="text-xl md:text-2xl font-bold text-gray-900">9月 スポーツ大会</h4>
-                    <p className="text-base md:text-lg text-gray-700 mt-2">汗を流して絆を深める</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xl md:text-2xl font-bold text-gray-900">10月 文化祭出店</h4>
-                    <p className="text-base md:text-lg text-gray-700 mt-2">みんなで創る最高の思い出</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xl md:text-2xl font-bold text-gray-900">11月 紅葉狩り</h4>
-                    <p className="text-base md:text-lg text-gray-700 mt-2">秋の自然を満喫</p>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-            <div className="absolute left-3 md:left-1/2 top-0 md:top-1/2 w-6 h-6 bg-orange-500 rounded-full transform md:-translate-x-1/2 md:-translate-y-1/2 shadow-lg z-10" />
-            <div className="w-full md:w-1/2 md:pl-16">
-              <motion.div
-                className="relative overflow-hidden rounded-xl shadow-xl"
-                initial={{ scale: 0.8 }}
-                whileInView={{ scale: 1 }}
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <motion.h3 
+                className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                <img
-                  src="https://images.unsplash.com/photo-1506102383123-c8ef1e872756"
-                  alt="秋のイベント"
-                  className="w-full h-48 md:h-64 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-              </motion.div>
+                イベント
+              </motion.h3>
+              <motion.p 
+                className="text-lg text-gray-600 max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                全力で楽しもう！もっと自由に、もっと楽しく。
+              </motion.p>
             </div>
-          </motion.div>
 
-          {/* 冬 */}
-          <motion.div 
-            className="relative flex flex-col md:flex-row items-start md:items-center pl-8 md:pl-0"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="w-full md:w-1/2 md:pr-16 mb-6 md:mb-0">
-              <h3 className="text-3xl md:text-4xl font-bold text-blue-300 mb-4 md:text-right">Winter</h3>
-              <div className="bg-white shadow-lg rounded-lg p-6">
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.3 }}
-                  className="space-y-4"
-                >
-                  <div>
-                    <h4 className="text-xl md:text-2xl font-bold text-gray-900">12月 クリスマスパーティ</h4>
-                    <p className="text-base md:text-lg text-gray-700 mt-2">特別な季節の特別な思い出</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xl md:text-2xl font-bold text-gray-900">1月 新年会</h4>
-                    <p className="text-base md:text-lg text-gray-700 mt-2">新しい年の始まりを祝う</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xl md:text-2xl font-bold text-gray-900">2月 冬合宿</h4>
-                    <p className="text-base md:text-lg text-gray-700 mt-2">スノボ・温泉で心も体も温まる</p>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-            <div className="absolute left-3 md:left-1/2 top-0 md:top-1/2 w-6 h-6 bg-blue-300 rounded-full transform md:-translate-x-1/2 md:-translate-y-1/2 shadow-lg z-10" />
-            <div className="w-full md:w-1/2 md:pl-16">
-              <motion.div
-                className="relative overflow-hidden rounded-xl shadow-xl"
-                initial={{ scale: 0.8 }}
-                whileInView={{ scale: 1 }}
-                transition={{ duration: 0.5 }}
+            <div className="space-y-16 md:space-y-32">
+              {/* 春（既存） */}
+              <motion.div 
+                className="relative flex flex-col md:flex-row items-start md:items-center pl-8 md:pl-0"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
               >
-                <img
-                  src="https://images.unsplash.com/photo-1517299321609-52687d1bc55a"
-                  alt="冬のイベント"
-                  className="w-full h-48 md:h-64 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                <div className="w-full md:w-1/2 md:pr-16 mb-6 md:mb-0">
+                  <h3 className="text-3xl md:text-4xl font-bold text-pink-500 mb-4 md:text-right">Spring</h3>
+                  <div className="bg-white shadow-lg rounded-lg p-6">
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                      className="space-y-4"
+                    >
+                      <div>
+                        <h4 className="text-xl md:text-2xl font-bold text-gray-900">4月 新歓イベント</h4>
+                        <p className="text-base md:text-lg text-gray-700 mt-2">桜の下で新しい出会いと思い出を</p>
+                      </div>
+                      <div>
+                        <h4 className="text-xl md:text-2xl font-bold text-gray-900">5月 BBQ・アウトドア</h4>
+                        <p className="text-base md:text-lg text-gray-700 mt-2">自然の中で楽しむ青春時間</p>
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
+                <div className="absolute left-3 md:left-1/2 top-0 md:top-1/2 w-6 h-6 bg-pink-500 rounded-full transform md:-translate-x-1/2 md:-translate-y-1/2 shadow-lg z-10" />
+                <div className="w-full md:w-1/2 md:pl-16">
+                  <motion.div
+                    className="relative overflow-hidden rounded-xl shadow-xl"
+                    initial={{ scale: 0.8 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1522383225653-ed111181a951"
+                      alt="春のイベント"
+                      className="w-full h-48 md:h-64 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* 夏 */}
+              <motion.div 
+                className="relative flex flex-col md:flex-row items-start md:items-center pl-8 md:pl-0"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="w-full md:w-1/2 md:pr-16 mb-6 md:mb-0">
+                  <h3 className="text-3xl md:text-4xl font-bold text-blue-500 mb-4 md:text-right">Summer</h3>
+                  <div className="bg-white shadow-lg rounded-lg p-6">
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                      className="space-y-4"
+                    >
+                      <div>
+                        <h4 className="text-xl md:text-2xl font-bold text-gray-900">6月 交流会</h4>
+                        <p className="text-base md:text-lg text-gray-700 mt-2">歌って踊って仲間作り</p>
+                      </div>
+                      <div>
+                        <h4 className="text-xl md:text-2xl font-bold text-gray-900">7-8月 夏合宿</h4>
+                        <p className="text-base md:text-lg text-gray-700 mt-2">ビーチ・花火・最高の思い出作り</p>
+                      </div>
+                      <div>
+                        <h4 className="text-xl md:text-2xl font-bold text-gray-900">8月 サマーフェスティバル</h4>
+                        <p className="text-base md:text-lg text-gray-700 mt-2">音楽と光の饗宴</p>
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
+                <div className="absolute left-3 md:left-1/2 top-0 md:top-1/2 w-6 h-6 bg-blue-500 rounded-full transform md:-translate-x-1/2 md:-translate-y-1/2 shadow-lg z-10" />
+                <div className="w-full md:w-1/2 md:pl-16">
+                  <motion.div
+                    className="relative overflow-hidden rounded-xl shadow-xl"
+                    initial={{ scale: 0.8 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+                      alt="夏のイベント"
+                      className="w-full h-48 md:h-64 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* 秋 */}
+              <motion.div 
+                className="relative flex flex-col md:flex-row items-start md:items-center pl-8 md:pl-0"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="w-full md:w-1/2 md:pr-16 mb-6 md:mb-0">
+                  <h3 className="text-3xl md:text-4xl font-bold text-orange-500 mb-4 md:text-right">Autumn</h3>
+                  <div className="bg-white shadow-lg rounded-lg p-6">
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                      className="space-y-4"
+                    >
+                      <div>
+                        <h4 className="text-xl md:text-2xl font-bold text-gray-900">9月 スポーツ大会</h4>
+                        <p className="text-base md:text-lg text-gray-700 mt-2">汗を流して絆を深める</p>
+                      </div>
+                      <div>
+                        <h4 className="text-xl md:text-2xl font-bold text-gray-900">10月 文化祭出店</h4>
+                        <p className="text-base md:text-lg text-gray-700 mt-2">みんなで創る最高の思い出</p>
+                      </div>
+                      <div>
+                        <h4 className="text-xl md:text-2xl font-bold text-gray-900">11月 紅葉狩り</h4>
+                        <p className="text-base md:text-lg text-gray-700 mt-2">秋の自然を満喫</p>
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
+                <div className="absolute left-3 md:left-1/2 top-0 md:top-1/2 w-6 h-6 bg-orange-500 rounded-full transform md:-translate-x-1/2 md:-translate-y-1/2 shadow-lg z-10" />
+                <div className="w-full md:w-1/2 md:pl-16">
+                  <motion.div
+                    className="relative overflow-hidden rounded-xl shadow-xl"
+                    initial={{ scale: 0.8 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1506102383123-c8ef1e872756"
+                      alt="秋のイベント"
+                      className="w-full h-48 md:h-64 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* 冬 */}
+              <motion.div 
+                className="relative flex flex-col md:flex-row items-start md:items-center pl-8 md:pl-0"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="w-full md:w-1/2 md:pr-16 mb-6 md:mb-0">
+                  <h3 className="text-3xl md:text-4xl font-bold text-blue-300 mb-4 md:text-right">Winter</h3>
+                  <div className="bg-white shadow-lg rounded-lg p-6">
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                      className="space-y-4"
+                    >
+                      <div>
+                        <h4 className="text-xl md:text-2xl font-bold text-gray-900">12月 クリスマスパーティ</h4>
+                        <p className="text-base md:text-lg text-gray-700 mt-2">特別な季節の特別な思い出</p>
+                      </div>
+                      <div>
+                        <h4 className="text-xl md:text-2xl font-bold text-gray-900">1月 新年会</h4>
+                        <p className="text-base md:text-lg text-gray-700 mt-2">新しい年の始まりを祝う</p>
+                      </div>
+                      <div>
+                        <h4 className="text-xl md:text-2xl font-bold text-gray-900">2月 冬合宿</h4>
+                        <p className="text-base md:text-lg text-gray-700 mt-2">スノボ・温泉で心も体も温まる</p>
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
+                <div className="absolute left-3 md:left-1/2 top-0 md:top-1/2 w-6 h-6 bg-blue-300 rounded-full transform md:-translate-x-1/2 md:-translate-y-1/2 shadow-lg z-10" />
+                <div className="w-full md:w-1/2 md:pl-16">
+                  <motion.div
+                    className="relative overflow-hidden rounded-xl shadow-xl"
+                    initial={{ scale: 0.8 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1517299321609-52687d1bc55a"
+                      alt="冬のイベント"
+                      className="w-full h-48 md:h-64 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  </motion.div>
+                </div>
               </motion.div>
             </div>
-          </motion.div>
         </div>
 
         {/* 追加イベント情報 */}
         <motion.div
-          className="mt-16 md:mt-24 text-center bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg mx-4"
+          className="mt-16 md:mt-24 relative overflow-hidden"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">AI勉強会</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="text-lg font-semibold text-gray-900 mb-3">AI活用基礎講座</h4>
-              <ul className="space-y-2 text-gray-700">
-                <li>• ChatGPTの使い方マスター</li>
-                <li>• Notionで第二の脳を作る</li>
-                <li>• AIアプリ開発入門</li>
-              </ul>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="text-lg font-semibold text-gray-900 mb-3">実践的なAI活用</h4>
-              <ul className="space-y-2 text-gray-700">
-                <li>• レポート・課題でのAI活用法</li>
-                <li>• AIでパワーポイント作成</li>
-                <li>• AIデザインツール活用</li>
-              </ul>
-            </div>
+          {/* 背景エフェクト */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5" />
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzYuMjUgMzUuMjVhMy43NSAzLjc1IDAgMTEtNy41IDAgMy43NSAzLjc1IDAgMDE3LjUgMHptLTE1IDBhMy43NSAzLjc1IDAgMTEtNy41IDAgMy43NSAzLjc1IDAgMDE3LjUgMHptMzAgMGEzLjc1IDMuNzUgMCAxMS03LjUgMCAzLjc1IDMuNzUgMCAwMTcuNSAweiIgZmlsbD0iI2U1ZTdlYiIgZmlsbC1vcGFjaXR5PSIuNSIvPjwvZz48L3N2Zz4=')] opacity-20" />
           </div>
-          <p className="mt-6 text-lg font-medium text-gray-900">
-            したいことがあればみんなで学ぼう！
-          </p>
-          <p className="text-sm md:text-base text-gray-600 mt-2">
-            ※イベントは予告なく変更になる場合があります
-          </p>
+
+          {/* メインコンテンツ */}
+          <div className="relative z-10 max-w-7xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <motion.h3 
+                className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                AI勉強会
+              </motion.h3>
+              <motion.p 
+                className="text-lg text-gray-600 max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                最新のAI技術を学び、実践的に活用する方法を身につけよう
+              </motion.p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* AI活用基礎講座 */}
+              <motion.div 
+                className="group relative bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative h-full">
+                  <div className="absolute inset-0">
+                    <img
+                      src="https://images.unsplash.com/photo-1677442136019-21780ecad995"
+                      alt="AI活用基礎講座"
+                      className="w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-300"
+                    />
+                  </div>
+                  <div className="p-8 relative z-10">
+                    <div className="flex items-center mb-6">
+                      <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4">
+                        <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </div>
+                      <h4 className="text-2xl font-bold text-gray-900">AI活用基礎講座</h4>
+                    </div>
+                    <ul className="space-y-4">
+                      <li className="flex items-start group/item">
+                        <span className="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1 group-hover/item:bg-blue-200 transition-colors">
+                          <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </span>
+                        <span className="text-gray-700 group-hover/item:text-blue-600 transition-colors">ChatGPTの使い方マスター</span>
+                      </li>
+                      <li className="flex items-start group/item">
+                        <span className="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1 group-hover/item:bg-blue-200 transition-colors">
+                          <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </span>
+                        <span className="text-gray-700 group-hover/item:text-blue-600 transition-colors">Notionで第二の脳を作る</span>
+                      </li>
+                      <li className="flex items-start group/item">
+                        <span className="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1 group-hover/item:bg-blue-200 transition-colors">
+                          <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </span>
+                        <span className="text-gray-700 group-hover/item:text-blue-600 transition-colors">AIアプリ開発入門</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* 実践的なAI活用 */}
+              <motion.div 
+                className="group relative bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative h-full">
+                  <div className="absolute inset-0">
+                    <img
+                      src="https://images.unsplash.com/photo-1677442136019-21780ecad995"
+                      alt="実践的なAI活用"
+                      className="w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-300"
+                    />
+                  </div>
+                  <div className="p-8 relative z-10">
+                    <div className="flex items-center mb-6">
+                      <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4">
+                        <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                      </div>
+                      <h4 className="text-2xl font-bold text-gray-900">実践的なAI活用</h4>
+                    </div>
+                    <ul className="space-y-4">
+                      <li className="flex items-start group/item">
+                        <span className="flex-shrink-0 w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-3 mt-1 group-hover/item:bg-purple-200 transition-colors">
+                          <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </span>
+                        <span className="text-gray-700 group-hover/item:text-purple-600 transition-colors">レポート・課題でのAI活用法</span>
+                      </li>
+                      <li className="flex items-start group/item">
+                        <span className="flex-shrink-0 w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-3 mt-1 group-hover/item:bg-purple-200 transition-colors">
+                          <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </span>
+                        <span className="text-gray-700 group-hover/item:text-purple-600 transition-colors">AIでパワーポイント作成</span>
+                      </li>
+                      <li className="flex items-start group/item">
+                        <span className="flex-shrink-0 w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-3 mt-1 group-hover/item:bg-purple-200 transition-colors">
+                          <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </span>
+                        <span className="text-gray-700 group-hover/item:text-purple-600 transition-colors">AIデザインツール活用</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            <motion.div 
+              className="mt-12 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <p className="text-xl font-bold text-gray-900 mb-4">
+                したいことがあればみんなで学ぼう！
+              </p>
+              <p className="text-sm text-gray-600">
+                ※イベントは予告なく変更になる場合があります
+              </p>
+            </motion.div>
+          </div>
         </motion.div>
       </section>
 
@@ -753,6 +958,7 @@ function App() {
         </motion.div>
       </section>
 
+
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4">
@@ -770,7 +976,7 @@ function App() {
             </div>
             <div className="flex space-x-8">
               <a 
-                href="https://line.me/ti/p/@your-line-id" 
+                href="https://lin.ee/oLszKWc" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -780,7 +986,7 @@ function App() {
                 </svg>
               </a>
               <a 
-                href="https://www.instagram.com/your-instagram-id" 
+                href="https://www.instagram.com/fit_ai.tankyu/?utm_source=ig_web_button_share_sheet" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
