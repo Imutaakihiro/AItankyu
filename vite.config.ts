@@ -52,6 +52,5 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'lucide-react']
-  },
-  base: '/ai-circle/', // GitHub Pages用のベースパス
+  }
 });
