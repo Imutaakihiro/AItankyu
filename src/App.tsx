@@ -451,7 +451,7 @@ function App() {
               onClick={() => document.getElementById('events-section')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <img
-                src="https://images.unsplash.com/photo-1511795409834-432f6c0c0e0c"
+                src="https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=800&q=80"
                 alt="イベント"
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
               />
@@ -466,7 +466,7 @@ function App() {
               onClick={() => document.getElementById('ai-section')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <img
-                src="https://images.unsplash.com/photo-1677442136019-21780ecad995"
+                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80"
                 alt="AI"
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
               />
