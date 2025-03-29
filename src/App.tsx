@@ -46,7 +46,7 @@ function App() {
             className="flex items-center space-x-2"
           >
             <img 
-              src="./images/ステッカー1.jpg"
+              src="./images/logoAI.jpg"
               alt="AI探究会ロゴ" 
               className="w-8 h-8 object-contain"
             />
@@ -135,7 +135,7 @@ function App() {
           <div className="absolute inset-0 flex items-center justify-center -translate-y-20">
             <div className="relative w-[800px] h-[800px]">
               <img 
-                src="./images/ステッカー1.jpg"
+                src="./images/logoAI.jpg"
                 alt="AI探究会ロゴ" 
                 className="w-full h-full object-contain opacity-15"
               />
@@ -740,7 +740,7 @@ function App() {
             <div className="mb-8 md:mb-0">
               <div className="flex items-center space-x-2 mb-4">
                 <img 
-                  src="./images/ステッカー1.jpg"
+                  src="./images/logoAI.jpg"
                   alt="AI探究会ロゴ" 
                   className="w-8 h-8 object-contain"
                 />
