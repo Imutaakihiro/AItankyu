@@ -1,6 +1,6 @@
-import React from 'react';
-import { Calendar, Users, Trophy, Heart, MapPin, Clock, Wallet, Bot, Instagram, Twitter, MessageCircle, ChevronRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { Calendar, Users, Trophy, Heart, MapPin, Clock, Wallet, Bot, Instagram, Twitter, MessageCircle, ChevronRight, Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -31,6 +31,8 @@ interface FAQCardProps {
 }
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -58,10 +60,64 @@ function App() {
             </motion.button>
           </div>
 
-          <button className="md:hidden">
-            <Bot className="w-6 h-6" />
+          <button 
+            className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </nav>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden bg-white border-t border-gray-100"
+            >
+              <div className="px-4 py-4 space-y-4">
+                <a 
+                  href="#about" 
+                  className="block text-gray-600 hover:text-black transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  サークル紹介
+                </a>
+                <a 
+                  href="#features" 
+                  className="block text-gray-600 hover:text-black transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  特徴
+                </a>
+                <a 
+                  href="#schedule" 
+                  className="block text-gray-600 hover:text-black transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  イベント
+                </a>
+                <a 
+                  href="#faq" 
+                  className="block text-gray-600 hover:text-black transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  FAQ
+                </a>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  className="w-full bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-900 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  説明会に参加
+                </motion.button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
       {/* Hero Section */}
@@ -236,7 +292,7 @@ function App() {
           transition={{ duration: 0.8 }}
           className="max-w-7xl mx-auto px-4"
         >
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-16 text-gray-900">毎月、新しい"楽しさ"に出会える。<br />年間イベント</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-16 text-gray-900">新しい"楽しさ"に出会える。<br />年間イベント</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <EventCard
               title="4月"
