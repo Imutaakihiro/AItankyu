@@ -448,9 +448,10 @@ function App() {
             <motion.div
               whileHover={{ scale: 1.02 }}
               className="relative h-[300px] rounded-2xl overflow-hidden cursor-pointer group"
+              onClick={() => document.getElementById('events-section')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <img
-                src="https://images.unsplash.com/photo-1522383225653-ed111181a951"
+                src="https://images.unsplash.com/photo-1511795409834-432f6c0c0e0c"
                 alt="イベント"
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
               />
@@ -462,6 +463,7 @@ function App() {
             <motion.div
               whileHover={{ scale: 1.02 }}
               className="relative h-[300px] rounded-2xl overflow-hidden cursor-pointer group"
+              onClick={() => document.getElementById('ai-section')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <img
                 src="https://images.unsplash.com/photo-1677442136019-21780ecad995"
@@ -478,7 +480,7 @@ function App() {
 
         {/* 既存のイベントセクション */}
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4">
+        <div className="relative z-10 max-w-7xl mx-auto px-4" id="events-section">
             <div className="text-center mb-12">
               <motion.h3 
                 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
@@ -706,6 +708,7 @@ function App() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          id="ai-section"
         >
           {/* 背景エフェクト */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5" />
