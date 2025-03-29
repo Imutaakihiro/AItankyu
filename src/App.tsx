@@ -76,15 +76,15 @@ function App() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-6xl font-bold mb-6 text-gray-900"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight"
             >
-              AIで自由になった時間、<br />最高の思い出にしよう。
+              AIで自由になった時間、<br className="hidden sm:block" />最高の思い出にしよう。
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg md:text-xl text-gray-600 mb-12"
+              className="text-base sm:text-lg md:text-xl text-gray-700 mb-12 font-medium"
             >
               ＼大学生活、もっと楽しくなる場所がここにある／
             </motion.p>
@@ -119,16 +119,16 @@ function App() {
           transition={{ duration: 0.8 }}
           className="max-w-7xl mx-auto px-4"
         >
-          <h2 className="text-3xl font-bold text-center mb-8">どんなサークル？｜AI時代の、リアルな青春を。</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-gray-900">どんなサークル？｜AI時代の、リアルな青春を。</h2>
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-lg text-gray-600 mb-8">
-              このサークルは、<br />
-              <span className="font-bold">「AIを使って生まれた時間を全力で楽しもう！」</span> をコンセプトに誕生しました。
+            <p className="text-base sm:text-lg text-gray-700 mb-8">
+              このサークルは、<br className="hidden sm:block" />
+              <span className="font-bold text-gray-900">「AIを使って生まれた時間を全力で楽しもう！」</span> をコンセプトに誕生しました。
             </p>
-            <p className="text-lg text-gray-600">
-              AIの力で効率化された今、私たちが大事にしたいのは、<span className="font-bold">"人と人とのつながり"</span>。<br />
-              スポーツ、季節イベント、文化活動まで、ジャンルを超えたリアルな体験を通じて、<br />
-              <span className="font-bold">大学生活をもっと楽しく、もっと自由に。</span>
+            <p className="text-base sm:text-lg text-gray-700">
+              AIの力で効率化された今、私たちが大事にしたいのは、<span className="font-bold text-gray-900">"人と人とのつながり"</span>。<br className="hidden sm:block" />
+              スポーツ、季節イベント、文化活動まで、ジャンルを超えたリアルな体験を通じて、<br className="hidden sm:block" />
+              <span className="font-bold text-gray-900">大学生活をもっと楽しく、もっと自由に。</span>
             </p>
           </div>
         </motion.div>
@@ -142,7 +142,7 @@ function App() {
           transition={{ duration: 0.8 }}
           className="max-w-7xl mx-auto px-4"
         >
-          <h2 className="text-3xl font-bold text-center mb-16">このサークル、ここが違う！｜5つのポイント</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-16 text-gray-900">このサークル、ここが違う！｜5つのポイント</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <FeatureCard
               icon={<Users className="w-8 h-8" />}
@@ -186,7 +186,7 @@ function App() {
           transition={{ duration: 0.8 }}
           className="max-w-7xl mx-auto px-4"
         >
-          <h2 className="text-3xl font-bold text-center mb-16">毎月、新しい"楽しさ"に出会える。｜年間イベント</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-16 text-gray-900">毎月、新しい"楽しさ"に出会える。｜年間イベント</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <EventCard
               title="4月"
@@ -238,7 +238,7 @@ function App() {
           transition={{ duration: 0.8 }}
           className="max-w-7xl mx-auto px-4"
         >
-          <h2 className="text-3xl font-bold text-center mb-16">リアルな声、集めました｜参加者の声</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-16 text-gray-900">リアルな声、集めました｜参加者の声</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <TestimonialCard
               name="Yさん"
@@ -266,7 +266,7 @@ function App() {
           transition={{ duration: 0.8 }}
           className="max-w-7xl mx-auto px-4"
         >
-          <h2 className="text-3xl font-bold text-center mb-16">よくある質問｜不安もここで解消！</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-16 text-gray-900">よくある質問｜不安もここで解消！</h2>
           <div className="max-w-3xl mx-auto space-y-8">
             <FAQCard
               question="途中入部できますか？"
@@ -300,20 +300,20 @@ function App() {
           transition={{ duration: 0.8 }}
           className="max-w-7xl mx-auto px-4"
         >
-          <h2 className="text-3xl font-bold text-center mb-8">まずは、気軽に来てみて！｜参加方法はこちら</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-gray-900">まずは、気軽に来てみて！｜参加方法はこちら</h2>
           <div className="max-w-3xl mx-auto text-center">
             <div className="space-y-6 mb-12">
-              <p className="text-lg font-bold">1. 説明会に参加</p>
-              <p className="text-lg font-bold">2. オープンイベントに遊びに来る</p>
-              <p className="text-lg font-bold">3. SNSからDMを送る</p>
+              <p className="text-base sm:text-lg font-bold text-gray-900">1. 説明会に参加</p>
+              <p className="text-base sm:text-lg font-bold text-gray-900">2. オープンイベントに遊びに来る</p>
+              <p className="text-base sm:text-lg font-bold text-gray-900">3. SNSからDMを送る</p>
             </div>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-base sm:text-lg text-gray-700 mb-8">
               💬 LINEオープンチャット・Instagram・X（旧Twitter）で随時情報発信中！
             </p>
-            <p className="text-lg font-bold text-gray-900">
+            <p className="text-base sm:text-lg font-bold text-gray-900">
               📅 4月・5月は新歓イベント盛りだくさん！
             </p>
-            <p className="text-gray-600">
+            <p className="text-gray-700">
               （お花見・BBQ・スポーツ大会など）
             </p>
           </div>
@@ -359,8 +359,8 @@ function FeatureCard({ icon, title, description, delay }: FeatureCardProps) {
       className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all"
     >
       <div className="mb-6">{icon}</div>
-      <h3 className="text-xl font-semibold mb-4 text-gray-900">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <h3 className="text-lg sm:text-xl font-semibold mb-4 text-gray-900">{title}</h3>
+      <p className="text-gray-700">{description}</p>
     </motion.div>
   );
 }
@@ -374,8 +374,8 @@ function EventCard({ title, description, delay }: EventCardProps) {
       whileHover={{ y: -5 }}
       className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all"
     >
-      <h3 className="text-xl font-semibold mb-2 text-gray-900">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-900">{title}</h3>
+      <p className="text-gray-700">{description}</p>
     </motion.div>
   );
 }
@@ -393,10 +393,10 @@ function TestimonialCard({ name, department, year, text, delay }: TestimonialCar
         <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
         <div>
           <h3 className="text-lg font-semibold text-gray-900">{name}</h3>
-          <p className="text-gray-600">{department} {year}</p>
+          <p className="text-gray-700">{department} {year}</p>
         </div>
       </div>
-      <p className="text-gray-600">{text}</p>
+      <p className="text-gray-700">{text}</p>
     </motion.div>
   );
 }
@@ -410,7 +410,7 @@ function FAQCard({ question, answer, delay }: FAQCardProps) {
       className="bg-white p-6 rounded-2xl shadow-sm"
     >
       <h3 className="text-lg font-semibold mb-2 text-gray-900">{question}</h3>
-      <p className="text-gray-600">{answer}</p>
+      <p className="text-gray-700">{answer}</p>
     </motion.div>
   );
 }
