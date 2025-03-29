@@ -202,7 +202,7 @@ function App() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight"
             >
-              AIで自由になった時間、<br className="hidden sm:block" />最高の思い出にしよう。
+              AIで自由になった時間<br className="hidden sm:block" />最高の思い出にしよう。
             </motion.h1>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -635,8 +635,27 @@ function App() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-lg md:text-xl font-medium text-gray-900">
-            🎉 その他、映画鑑賞・ボルダリング・遊園地企画なども！
+          <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">AI勉強会</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">AI活用基礎講座</h4>
+              <ul className="space-y-2 text-gray-700">
+                <li>• ChatGPTの使い方マスター</li>
+                <li>• Notionで第二の脳を作る</li>
+                <li>• AIアプリ開発入門</li>
+              </ul>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">実践的なAI活用</h4>
+              <ul className="space-y-2 text-gray-700">
+                <li>• レポート・課題でのAI活用法</li>
+                <li>• AIでパワーポイント作成</li>
+                <li>• AIデザインツール活用</li>
+              </ul>
+            </div>
+          </div>
+          <p className="mt-6 text-lg font-medium text-gray-900">
+            したいことがあればみんなで学ぼう！
           </p>
           <p className="text-sm md:text-base text-gray-600 mt-2">
             ※イベントは予告なく変更になる場合があります
