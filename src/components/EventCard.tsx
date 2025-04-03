@@ -1,4 +1,4 @@
-import { color, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface EventCardProps {
   season: string;
