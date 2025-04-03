@@ -14,6 +14,7 @@ import logoAI from "./assets/logoAI.jpg";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import EventCard from "./components/EventCard";
+import FAQCard from "./components/FAQCard";
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -29,12 +30,6 @@ interface TestimonialCardProps {
   department: string;
   year: string;
   text: string;
-  delay: number;
-}
-
-interface FAQCardProps {
-  question: string;
-  answer: string;
   delay: number;
 }
 
@@ -950,20 +945,6 @@ function TestimonialCard({
         </div>
       </div>
       <p className="text-gray-700">{text}</p>
-    </motion.div>
-  );
-}
-
-function FAQCard({ question, answer, delay }: FAQCardProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay }}
-      className="bg-white p-6 rounded-2xl shadow-sm"
-    >
-      <h3 className="text-lg font-semibold mb-2 text-gray-900">{question}</h3>
-      <p className="text-gray-700">{answer}</p>
     </motion.div>
   );
 }
