@@ -16,7 +16,6 @@ import Footer from "./components/Footer";
 import EventCard from "./components/EventCard";
 import FAQCard from "./components/FAQCard";
 import TestimonialCard from "./components/TestimonialCard";
-import FeatureCard from "./components/FeatureCard";
 import AboutSection from "./sections/AboutSection/AboutSection";
 import FeaturesSection from "./sections/FeatureSection/FeatureSection";
 
