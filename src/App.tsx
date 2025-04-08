@@ -20,6 +20,7 @@ import AboutSection from "./sections/AboutSection/AboutSection";
 import FeaturesSection from "./sections/FeatureSection/FeatureSection";
 import HeroSection from "./sections/HeroSection/HeroSection";
 import { ScheduleSection } from "./sections/ScheduleSection/ScheduleSection";
+import TestimonialSection from "./sections/Testimonials/TestimonialSection";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -42,7 +43,8 @@ function App() {
       <ScheduleSection />
 
       {/* Testimonials Section */}
-      <section className="py-24">
+      <TestimonialSection />
+      {/* <section className="py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -69,7 +71,7 @@ function App() {
             />
           </div>
         </motion.div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
       <section id="faq" className="py-24 bg-gray-50">
