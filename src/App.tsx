@@ -17,6 +17,8 @@ import EventCard from "./components/EventCard";
 import FAQCard from "./components/FAQCard";
 import TestimonialCard from "./components/TestimonialCard";
 import FeatureCard from "./components/FeatureCard";
+import AboutSection from "./components/AboutSection/AboutSection";
+import FeaturesSection from "./components/FeatureSection/FeatureSection";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -155,207 +157,10 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 relative">
-        {/* 背景 */}
-        <div className="absolute inset-0 bg-gray-50">
-          <div className="absolute inset-0 overflow-hidden">
-            {/* デジタルウェーブライン - 上部と下部に配置 */}
-            {/* 上部のライン */}
-            {[...Array(2)].map((_, i) => (
-              <motion.div
-                key={`top-${i}`}
-                className="absolute w-[200%] h-[2px]"
-                style={{
-                  background:
-                    "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.3) 25%, transparent 50%, transparent 100%)",
-                  top: `${15 + i * 10}%`, // 上部に配置
-                  left: "-50%",
-                }}
-                animate={{
-                  x: ["0%", "50%"],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "linear",
-                  delay: i * 1.5,
-                }}
-              />
-            ))}
-            {/* 下部のライン */}
-            {[...Array(2)].map((_, i) => (
-              <motion.div
-                key={`bottom-${i}`}
-                className="absolute w-[200%] h-[2px]"
-                style={{
-                  background:
-                    "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.3) 25%, transparent 50%, transparent 100%)",
-                  bottom: `${15 + i * 10}%`, // 下部に配置
-                  left: "-50%",
-                }}
-                animate={{
-                  x: ["0%", "50%"],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "linear",
-                  delay: i * 1.5 + 2, // 上部とは異なるタイミング
-                }}
-              />
-            ))}
-
-            {/* エネルギーパルス - 下部に配置 */}
-            <div className="absolute left-1/2 bottom-[10%] -translate-x-1/2">
-              {[...Array(2)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute inset-0"
-                  animate={{
-                    scale: [1, 2],
-                    opacity: [0.2, 0],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "linear",
-                    delay: i * 1.5,
-                  }}
-                >
-                  <div className="w-[150px] h-[150px] border border-black/10 rounded-full" />
-                </motion.div>
-              ))}
-            </div>
-
-            {/* スキャンライン - 上部と下部のみ */}
-            <div className="absolute inset-0">
-              {[...Array(2)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-full h-[50px]"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, transparent, rgba(0,0,0,0.05), transparent)",
-                    bottom: "10%",
-                  }}
-                  initial={{
-                    y: "-100%",
-                  }}
-                  animate={{
-                    y: ["0%", "100%"],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "linear",
-                    delay: i * 2,
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* コンテンツ */}
-        <div className="relative z-10">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-gray-900">
-              どんなサークル？
-              <br />
-              AI時代の、リアルな青春を。
-            </h2>
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="text-base sm:text-lg text-gray-700 mb-8">
-                このサークルは、
-                <br className="hidden sm:block" />
-                <span className="font-bold text-gray-900">
-                  「AIを使って生まれた時間を全力で楽しもう！」
-                </span>{" "}
-                をコンセプトに誕生しました。
-              </p>
-              <p className="text-base sm:text-lg text-gray-700">
-                AIの力で効率化された今、私たちが大事にしたいのは、
-                <span className="font-bold text-gray-900">
-                  "人と人とのつながり"
-                </span>
-                。<br className="hidden sm:block" />
-                スポーツ、季節イベント、文化活動まで、ジャンルを超えたリアルな体験を通じて、
-                <br className="hidden sm:block" />
-                <span className="font-bold text-gray-900">
-                  大学生活をもっと楽しく、もっと自由に。
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <AboutSection />
 
       {/* Features Section */}
-      <section id="features" className="py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto px-4"
-        >
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-gray-900">
-            このサークル、ここが違う！
-            <br />
-            5つのポイント
-          </h2>
-          {/* スクロール可能なコンテナ */}
-          <div className="relative -mx-4 px-4">
-            <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory no-scrollbar pb-2">
-              <FeatureCard
-                icon={<Users className="w-12 h-12 text-blue-600" />}
-                title="多ジャンル"
-                description="スポーツも季節行事も文化系も！"
-                delay={0.2}
-                gradient="from-blue-500/10 to-purple-500/10"
-                className="w-[85vw] max-w-[300px] flex-shrink-0 snap-center"
-              />
-              <FeatureCard
-                icon={<Wallet className="w-12 h-12 text-green-600" />}
-                title="低コスト"
-                description="年会費たったの1,500円"
-                delay={0.4}
-                gradient="from-green-500/10 to-emerald-500/10"
-                className="w-[85vw] max-w-[300px] flex-shrink-0 snap-center"
-              />
-              <FeatureCard
-                icon={<Calendar className="w-12 h-12 text-purple-600" />}
-                title="自由参加"
-                description="月2回ペース、掛け持ちOK"
-                delay={0.6}
-                gradient="from-purple-500/10 to-pink-500/10"
-                className="w-[85vw] max-w-[300px] flex-shrink-0 snap-center"
-              />
-              <FeatureCard
-                icon={<Trophy className="w-12 h-12 text-yellow-600" />}
-                title="全学部対象"
-                description="学年・学部関係なし"
-                delay={0.8}
-                gradient="from-yellow-500/10 to-orange-500/10"
-                className="w-[85vw] max-w-[300px] flex-shrink-0 snap-center"
-              />
-              <FeatureCard
-                icon={<Heart className="w-12 h-12 text-red-600" />}
-                title="企画参加OK"
-                description="メンバー発案イベントを積極採用！"
-                delay={1.0}
-                gradient="from-red-500/10 to-rose-500/10"
-                className="w-[85vw] max-w-[300px] flex-shrink-0 snap-center"
-              />
-            </div>
-            {/* スクロールインジケーター */}
-            <div className="mt-4 flex justify-center gap-2">
-              {[...Array(5)].map((_, i) => (
-                <div key={i} className="w-1.5 h-1.5 rounded-full bg-gray-300" />
-              ))}
-            </div>
-          </div>
-        </motion.div>
-      </section>
+      <FeaturesSection />
 
       {/* Schedule Section */}
       <section
@@ -453,7 +258,6 @@ function App() {
               ]}
               image="https://images.unsplash.com/photo-1522383225653-ed111181a951"
             />
-
             {/* 夏 */}
             <EventCard
               season="Summer"
@@ -466,7 +270,6 @@ function App() {
               ]}
               image="https://images.unsplash.com/photo-1522383225653-ed111181a951"
             />
-
             {/* 秋 */}
             <EventCard
               season="Autumn"
