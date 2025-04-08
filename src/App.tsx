@@ -18,6 +18,7 @@ import FAQCard from "./components/FAQCard";
 import TestimonialCard from "./components/TestimonialCard";
 import AboutSection from "./sections/AboutSection/AboutSection";
 import FeaturesSection from "./sections/FeatureSection/FeatureSection";
+import HeroSection from "./sections/HeroSection/HeroSection";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -28,132 +29,7 @@ function App() {
       <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-24 relative overflow-hidden">
-        {/* AI Animation Background */}
-        <div className="absolute inset-0">
-          {/* ロゴ背景 */}
-          <div className="absolute inset-0 flex items-center justify-center -translate-y-20">
-            <div className="relative w-[800px] h-[800px]">
-              <img
-                src={logoAI}
-                alt="AI探究会ロゴ"
-                className="w-full h-full object-contain opacity-15"
-              />
-            </div>
-          </div>
-          {/* グラデーション背景 */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 animate-gradient opacity-5"></div>
-          {/* パーティクルエフェクト */}
-          <div className="absolute inset-0 opacity-20">
-            {[...Array(100)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-2 h-2 bg-blue-500 rounded-full"
-                initial={{
-                  x: Math.random() * 100 + "%",
-                  y: Math.random() * 100 + "%",
-                  opacity: Math.random(),
-                  scale: Math.random() * 0.5 + 0.5,
-                }}
-                animate={{
-                  x: [
-                    Math.random() * 100 + "%",
-                    Math.random() * 100 + "%",
-                    Math.random() * 100 + "%",
-                  ],
-                  y: [
-                    Math.random() * 100 + "%",
-                    Math.random() * 100 + "%",
-                    Math.random() * 100 + "%",
-                  ],
-                  opacity: [0.2, 0.8, 0.2],
-                  scale: [1, 2, 1],
-                }}
-                transition={{
-                  duration: Math.random() * 3 + 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
-            ))}
-          </div>
-          {/* グリッドパターン */}
-          <svg className="absolute inset-0 w-full h-full">
-            <defs>
-              <pattern
-                id="grid"
-                width="40"
-                height="40"
-                patternUnits="userSpaceOnUse"
-              >
-                <path
-                  d="M 40 0 L 0 0 0 40"
-                  fill="none"
-                  stroke="rgba(0,0,0,0.05)"
-                  strokeWidth="1"
-                />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-          </svg>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="max-w-7xl mx-auto px-4 relative z-10"
-        >
-          <div className="text-center max-w-3xl mx-auto">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight"
-            >
-              AIで自由になった時間
-              <br className="hidden sm:block" />
-              最高の思い出にしよう。
-            </motion.h1>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative mb-12"
-            >
-              <p className="text-base sm:text-lg md:text-xl text-gray-700 font-medium">
-                大学生活、もっと楽しくなる場所がここにある
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                className="bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-900 transition-colors relative group"
-              >
-                <a
-                  href="https://docs.google.com/forms/d/1cFeIUMvCSwXw9udi6DFEXim409TwzSn4Xoh9KkowJRs/edit"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-20 group-hover:opacity-50 transition duration-200"></div>
-                  <span className="relative">入会フォーム</span>
-                </a>
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                className="bg-white text-black px-8 py-4 rounded-full text-lg font-medium border-2 border-black hover:bg-gray-50 transition-colors"
-              >
-                新入生勧誘へ
-              </motion.button>
-            </motion.div>
-          </div>
-        </motion.div>
-      </section>
+      <HeroSection />
 
       {/* About Section */}
       <AboutSection />

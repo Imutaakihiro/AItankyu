@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import logoAI from "../../assets/logoAI.png"; // ロゴのパスを変更
+import logoAI from "../../assets/logoAI.jpg"; // ロゴのパスを変更
 
 const AIAnimationBackground: React.FC = () => (
   <div className="absolute inset-0">
