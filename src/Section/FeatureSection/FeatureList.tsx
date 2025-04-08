@@ -1,5 +1,5 @@
 import { Users, Wallet, Calendar, Trophy, Heart } from "lucide-react";
-import FeatureCard from "../FeatureCard";
+import FeatureCard from "../../components/FeatureCard";
 
 const features = [
   {
