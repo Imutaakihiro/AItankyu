@@ -1,6 +1,6 @@
 import { AISection } from "./AISection/AISection";
 import { EventsSection } from "./EventsSection";
-import { SelectionSection } from "./SelectionSection.tsx/SelectionSection";
+import { SelectionSection } from "./SelectionSection/SelectionSection";
 
 export const ScheduleSection = () => {
   return (
