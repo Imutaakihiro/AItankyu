@@ -1,26 +1,11 @@
-import React, { useState } from "react";
-import {
-  Calendar,
-  Users,
-  Trophy,
-  Heart,
-  Wallet,
-  Instagram,
-  Menu,
-  X,
-} from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import logoAI from "./assets/logoAI.jpg";
+import { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import EventCard from "./components/EventCard";
-import FAQCard from "./components/FAQCard";
-import TestimonialCard from "./components/TestimonialCard";
 import AboutSection from "./sections/AboutSection/AboutSection";
 import FeaturesSection from "./sections/FeatureSection/FeatureSection";
 import HeroSection from "./sections/HeroSection/HeroSection";
 import { ScheduleSection } from "./sections/ScheduleSection/ScheduleSection";
-import TestimonialSection from "./sections/TestimonialsSection/TestimonialSection";
+import TestimonialSection from "./sections/TestimonialsSection/TestimonialsSection";
 import FAQSection from "./sections/FAQSection/FAQSection";
 import JoinSection from "./sections/JoinSection/JoinSection";
 

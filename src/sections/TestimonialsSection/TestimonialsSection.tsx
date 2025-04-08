@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import TestimonialCard from "../../components/TestimonialCard";
 
-const TestimonialSection: React.FC = () => {
+const TestimonialsSection: React.FC = () => {
   return (
     <section className="py-24">
       <motion.div
@@ -34,4 +34,4 @@ const TestimonialSection: React.FC = () => {
   );
 };
 
-export default TestimonialSection;
+export default TestimonialsSection;
