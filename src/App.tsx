@@ -17,8 +17,8 @@ import EventCard from "./components/EventCard";
 import FAQCard from "./components/FAQCard";
 import TestimonialCard from "./components/TestimonialCard";
 import FeatureCard from "./components/FeatureCard";
-import AboutSection from "./Section/AboutSection/AboutSection";
-import FeaturesSection from "./Section/FeatureSection/FeatureSection";
+import AboutSection from "./sections/AboutSection/AboutSection";
+import FeaturesSection from "./sections/FeatureSection/FeatureSection";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
